@@ -1,0 +1,52 @@
+conky.config = {
+	alignment = 'top_right',
+	background = true,
+	color2 = 'orange',
+	cpu_avg_samples = 2,
+	default_color = '1ed1b1',
+	double_buffer = true,
+	font = 'Prime:size=10',
+	draw_shades = false,
+	gap_x = 30,
+	gap_y = 45,
+	minimum_width = 400,
+	no_buffers = true,
+	own_window = true,
+    own_window_transparent = false,	
+    own_window_type = 'override',
+    own_window_class = 'Conky',
+    own_window_argb_visual = true,
+    own_window_argb_value = 100,
+    own_window_colour = '#000',
+    own_window_hints = 'below,sticky,skip_taskbar,undecorated,skip_pager',
+    own_window_argb_value = 100,
+	update_interval = 2.0,
+	use_xft = true,
+}
+
+conky.text = [[
+${color}${hr}
+${font Noto Sans Mono:size=12}Shortcut Keys$font
+${color}${hr}${color}
+[PrtSc]${alignr}${color2}Screenshot(~/Pictures)${color}
+[Win] + F1 ${alignr}${color2}Firefox${color}
+[Win] + F2${alignr}${color2}Pacman file manager${color}
+[Win] + F3${alignr}${color2}Python shell${color}
+[Win] + arrow${alignr}${color2}Change focus${color}
+[Win] + f${alignr}${color2}FullScreen mode${color}
+[Win]+ q${alignr}${color2}Close${color}
+[Win] + d${alignr}${color2}Launcher app${color}
+[Ctrl] + [Win] +Num${alignr}${color2}Send windows to workspace${color}
+[Win] + p${alignr}${color2}Pavucontrol${color}
+[Ctrl] + [Win] + x${alignr}${color2}Xkill${color}
+[Shift] + [Win] + arrow ${alignr}${color2} Move window in layout${color}
+[Alt] + Up/Down${alignr}${color2}Take/Send window from scratchpad${color}
+[Win] + [Shift] + space${alignr}${color2}Toggle floating/tiling window${color}
+[Win] + [Return]${alignr}${color2}Dropdown Terminal${color}
+[Win] + i ${alignr}${color2}i3 config${color}
+[Win] + 0 ${alignr}${color2}System mode${color}
+[Alt] + [h,j,k,l] ${alignr}${color2}Resize ${color}
+[Win] + t ${alignr}${color2}Terminal${color}
+[Win] + k ${alignr}${color2}dmkill${color}
+[Win] + c ${alignr}${color2}dmconf${color}
+]];

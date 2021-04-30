@@ -1,0 +1,43 @@
+conky.config = {
+	alignment = 'bottom_left',
+	background = true,
+	color2 = 'orange',
+	cpu_avg_samples = 2,
+	default_color = '1ed1b1',
+	double_buffer = true,
+	font = 'Prime:size=10',
+	draw_shades = false,
+	gap_x = 30,
+	gap_y = 5,
+	minimum_width = 400,
+	no_buffers = true,
+	own_window = true,
+	own_window_class = "override",
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_argb_visual = true,
+    own_window_argb_value = 100,
+	update_interval = 2.0,
+	use_xft = true,
+}
+conky.text = [[
+${color}${hr}
+${font Noto Sans Mono:size=12}Shortcut Keys$font
+${color}${hr}${color}
+[PrtSc]${alignr}${color2}Screenshot(~/Pictures)${color}
+[Win] + [Alt] + (i,o,k,l)${alignr}${color2}Tiling window${color}
+[Win] + D${alignr}${color2}Go to Desktop${color}
+[Win] + Space${alignr}${color2}Openbox Menu${color}
+[Alt] + Tab${alignr}${color2}Next window${color}
+[Alt] + [Shift] + Tab${alignr}${color2}Previous windows${color}
+[Alt] + F4${alignr}${color2}Close${color}
+[Alt] + F2${alignr}${color2}Launcher${color}
+[Ctrl] + [Alt] +t${alignr}${color2}Drop-down xfce4 terminal${color}
+[Win] + L${alignr}${color2}Lock${color}
+[Alt] + Scroll${alignr}${color2}Move to desktop${color}
+[Win] + v${alignr}${color2}Audio Control${color}
+[Alt] + (Up/Down)${alignr}${color2}Maximize/Minimize Window${color}
+[Win] + arrow${alignr}${color2}Windows move${color}
+[Win] + [Alt] + arrow${alignr}${color2}Full Windows move${color}
+[Shift] + [Alt] + Scroll${alignr}${color2}Move Windows to desktop${color}
+]];

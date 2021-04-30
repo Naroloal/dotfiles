@@ -1,0 +1,106 @@
+conky.config = {{
+    alignment = 'top_left',
+    background = true,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = "{color4}",
+    default_outline_color = 'red',
+    override_utf8_locale = true,
+    default_shade_color = "{color5}",
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    xftalpha = 1.0,
+    total_run_times = 0,
+    gap_x = 30,
+    gap_y = 40,
+    minimum_height = 300,
+    maximum_height = 350,
+    minimum_width =400,
+    maximum_width = 450,
+    net_avg_samples = 2,
+    own_window = true,
+    own_window_transparent = false,	
+    own_window_type = 'override',
+    own_window_class = 'Conky',
+    own_window_argb_visual = true,
+    own_window_argb_value = 150,
+    own_window_colour = '#000',
+    own_window_hints = 'below,sticky,skip_taskbar,undecorated,skip_pager',
+    double_buffer = true,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+    stippled_borders = 0,
+    update_interval = 1.0,
+    uppercase = true,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = false,
+    font = 'Prime:size=10',
+}}
+
+conky.text = [[
+${{font Prime:size=12:weight=bold}}${{color}}Buenos Aires${{goto 150}}${{font Prime:weight=bold:size=12}}${{tztime America/Argentina/Buenos_Aires %H:%M}}${{alignr}}${{time %A %d/%m/%y}}
+${{font Prime:size=12:weight=bold}}${{color}}Shanghai${{goto 150}}${{font Prime:weight=bold:size=12}}${{tztime Asia/Shanghai %H:%M}}${{alignr}}${{tztime Asia/Shanghai %A %d/%m/%y}}
+${{font Prime:size=12:weight=bold}}${{color}}London${{goto 150}}${{font Prime:weight=bold:size=12}}${{tztime Europe/London %H:%M}}${{alignr}}${{tztime Europe/London %A %d/%m/%y}}
+
+${{font Prime}}${{color grey}}Kernel$color$alignr$kernel$font
+${{color grey}}Distro $color$alignr${{exec lsb_release -ds | sed 's/"//g'}}
+${{color grey}}Res $color$alignr${{exec xdpyinfo | awk '/dimensions/{{print $2}}'}}
+${{color grey}}Uptime$color$alignr$uptime
+${{color grey}}Frequency $color$alignr$freq_g Ghz
+
+#${{color grey}}Song$color$alignr${{exec ~/title.sh}}  ${{exec ~/artist.sh}}
+
+${{color grey}}Core 0 $color$alignr${{exec sensors |grep "Core 0"| cut -c17-20}}°C
+${{color grey}}Core 1 $color$alignr${{exec sensors |grep "Core 1"| cut -c17-20}}°C
+#${{color grey}}Core 1 $color$alignr${{execi 5 sensors|grep 'Core 1'| awk -F'+' '{{print $2}}' | awk -F'.' '{{print $1}}'}} °C
+#${{color grey}}Core 2 $color$alignr${{execi 5 sensors|grep 'Core 2'| awk -F'+' '{{print $2}}' | awk -F'.' '{{print $1}}'}} °C
+#${{color grey}}Core 3 $color$alignr${{execi 5 sensors|grep 'Core 3'| awk -F'+' '{{print $2}}' | awk -F'.' '{{print $1}}'}} °C
+${{color grey}}RAM $color$alignr$mem/$memmax
+${{color #BEC8CB}}${{membar 4}}
+${{color grey}}Swap $color$alignr$swap/$swapmax
+${{color #BEC8CB}}${{swapbar 4}}
+${{color grey}}CPU $color$alignr$cpu%
+${{color #BEC8CB}}${{cpubar 4}}
+Home $color$alignr${{fs_used /home}}/${{fs_size /home}}
+${{color #BEC8CB}}${{fs_bar 4 /home}}
+${{color grey}}Battery 
+${{color #BEC8CB}}${{battery_bar 4 BAT0}}
+${{color #BEC8CB}}${{battery_bar 4 BAT1}}
+${{color grey}}Network $alignr$color${{if_existing /sys/class/net/eth0/operstate up}}Ethernet${{else}}${{if_existing /sys/class/net/wlan0/operstate up}}Wlan${{else}}${{if_up usb0}}USB${{else}}${{if_existing /proc/net/route wlp59s0}} $wireless_essid (WIFI)${{else}}None${{endif}}${{endif}}${{endif}}${{endif}}
+${{if_existing /sys/class/net/eth0/operstate up}}
+${{color grey}}Up $color$alignr${{upspeedf eth0}}
+${{color grey}}${{upspeedgraph eth0 25 #BEC8CB}}
+${{color grey}}Down $color$alignr${{downspeedf eth0}}mbp/s
+${{color grey}}${{downspeedgraph eth0 25 #BEC8CB}}
+${{endif}}${{if_existing /sys/class/net/wlan0/operstate up}}
+${{color grey}}Up $color$alignr${{upspeedf wlan0}} mbp/s
+${{color grey}}${{upspeedgraph wlan0 25 #BEC8CB}}
+${{color grey}}Down $color$alignr${{downspeedf wlan0}} mbp/s
+${{color grey}}${{downspeedgraph wlan0 25 #BEC8CB}}
+${{endif}}${{if_up usb0}}
+
+${{color grey}}Up $color$alignr${{upspeedf usb0}}
+${{color grey}}${{upspeedgraph usb0 25 #BEC8CB}}
+${{color grey}}Down$color$alignr${{downspeedf usb0}}
+${{color grey}}${{downspeedgraph usb0 25 #BEC8CB}}
+${{endif}}${{if_existing /proc/net/route wlp59s0}}
+
+${{color grey}}Up $color$alignr${{upspeedf wlp59s0}}
+${{color grey}}${{upspeedgraph wlp59s0 25 #BEC8CB}}
+
+${{color grey}}Down $color$alignr${{downspeedf wlp59s0}}
+${{color grey}}${{downspeedgraph wlp59s0 25 #BEC8CB}}
+${{endif}}
+
+${{color grey}}Processes${{goto 200}} PID${{goto 250}} CPU%${{goto 300}} MEM%
+$color ${{top name 1}} ${{goto 200}}${{top pid 1}} ${{goto 250}} ${{top cpu 1}} ${{goto 300}}${{top mem 1}}
+$color ${{top name 2}} ${{goto 200}}${{top pid 2}} ${{goto 250}} ${{top cpu 2}} ${{goto 300}}${{top mem 2}}
+$color ${{top name 3}} ${{goto 200}}${{top pid 3}} ${{goto 250}} ${{top cpu 3}} ${{goto 300}}${{top mem 3}}
+$color ${{top name 4}} ${{goto 200}}${{top pid 4}} ${{goto 250}} ${{top cpu 4}} ${{goto 300}}${{top mem 4}}
+]]

@@ -3,7 +3,6 @@
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__2E_2E_:cd\x20\x2e\x2e
 SETUVAR _fish_abbr__7E_:cd\x20\x7e
-#SETUVAR _fish_abbr_conda:conda\x20activate
 SETUVAR _fish_abbr_ls:ls\x20\x2dla
 SETUVAR _fish_abbr_pacman:sudo\x20pacman
 SETUVAR fish_color_autosuggestion:555\x1ebrblack

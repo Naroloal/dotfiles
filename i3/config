@@ -58,7 +58,7 @@ bindsym $mod+End exec $myTerm -e htop
 ################################################################################################
 
 #exec --no-startup-id volumeicon
-exec --no-startup-id pulseaudio
+exec_always --no-startup-id pulseaudio --start
 exec --no-startup-id pa-applet
 
 ################################################################################################
@@ -257,17 +257,18 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id  feh --bg-fill --randomize ~/Imágenes/Wallpapers/*; sleep 1; picom --config ~/.config/picom/picom.conf --experimental-backends
+#exec_always --no-startup-id  feh --bg-fill --randomize ~/Imágenes/Wallpapers/*; sleep 1
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf --experimental-backends
 exec --no-startup-id numlockx off
 exec --no-startup-id dunst
-exec_always wal -i ~/Imágenes/Wallpapers
+#exec_always wal -i ~/Imágenes/Wallpapers
 exec_always --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id powerkit
 exec --no-startup-id xfce4-power-manager
-#exec_always --no-startup-id exec ~/.config/wpg/wp_init.sh
-#exec_always --no-startup-id wpg -s
-#exec_always --no-startup-id exec wpg-install -g -i
+exec_always --no-startup-id exec ~/.config/wpg/wp_init.sh
+exec_always --no-startup-id wpg -mm
+exec_always --no-startup-id exec wpg-install.sh -g -i
 exec --no-startup-id thunderbird
 exec_always --no-startup-id autotiling
 exec --no-startup-id conky --config ~/.config/conky/conkyi3rc

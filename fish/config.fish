@@ -13,7 +13,6 @@ set fish_user_paths $fish_user_paths ~/miniconda3/bin/
 
 if status --is-interactive
     abbr --add --global ls exa -la
-    abbr --add --global conda conda activate
     abbr --add --global gco git checkout
     # etcetera
 end

@@ -56,12 +56,8 @@ nmap ga <Plug>(EasyAlign)
 "nnoremap <leader>tl :<c-u>exec v:count.'Tclear'<cr>
 
 
-
-command! -nargs=0 RunQtConsole
-  \call jobstart("conda activate")
- " \call jobstart("jupyter qtconsole --JupyterWidget.include_other_output=True")
+command! -nargs=0 RunQtConsole call jobstart("jupyter qtconsole --JupyterWidget.include_other_output=True")
 let g:ipy_celldef = '^##' " regex for cell start and end
-
 nmap <silent> <leader>jqt :RunQtConsole<Enter>
 nmap <silent> <leader>jk :IPython<Space>--existing<Space>--no-window<Enter>
 nmap <silent> <leader>jc <Plug>(IPy-RunCell)

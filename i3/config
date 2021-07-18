@@ -43,7 +43,8 @@ bindsym $mod+t exec $myTerm
 bindsym $mod+q kill
 
 # start program launcher
-bindsym $mod+d exec rofi -show drun -show-icons -modi drun
+#bindsym $mod+d exec rofi -show drun -show-icons -modi drun
+bindsym $mod+d exec /home/thungur/anaconda3/bin/dmenu_extended_run 
 
 #drop-down terminal
 bindsym $mod+Return exec xfce4-terminal --drop-down
@@ -201,14 +202,17 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 assign [class="Thunderbird"] $ws8
 assign [class="Microsoft Teams - Preview"] $ws7
 assign [class="discord"] $ws7
+assign [class="Skype"] $ws6
 assign [class="Spotify"] $ws7
 # assign [class="Firefox"] $ws2
 # assign [class="Pcmanfm"] $ws3
 
 # Open specific applications in floating mode
 for_window [title="update"] floating enable
+for_window [class="zoom"] floating enable
 for_window [title="HG_Peer_OffScreenWindow"] floating enable
-
+for_window [title="Breakout Rooms - In Progress"] floating enable
+for_window [title="Control de Volumen"] floating enable
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
@@ -271,8 +275,7 @@ exec_always --no-startup-id wpg -mm
 exec_always --no-startup-id exec wpg-install.sh -g -i
 exec --no-startup-id thunderbird
 exec_always --no-startup-id autotiling
-exec --no-startup-id conky --config ~/.config/conky/conkyi3rc
-exec --no-startup-id conky --config ~/.config/conky/conky2i3rc
+exec_always --no-startup-id bash ~/.config/myscripts/checkconky.sh
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 #exec_always --no-startup-id ff-theme-util
 #exec_always --no-startup-id fix_xcursor

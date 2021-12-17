@@ -1,0 +1,15 @@
+[general]
+base_currency = USD
+display = both
+
+[bitcoin]
+icon = 
+name = BTC
+    
+[ethereum]
+icon = 
+name = ETH
+
+[the-sandbox]
+icon = 
+name = SAND

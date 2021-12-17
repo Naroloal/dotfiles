@@ -1,5 +1,5 @@
-set fish_greeting "Hello $USER"
-colorscript random
+#set fish_greeting "Hello $USER"
+#colorscript random
 
 set -gx PATH ~/anaconda3/bin $PATH
 # Conda startup script

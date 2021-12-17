@@ -20,7 +20,7 @@
 
 foreground = ${xrdb:color7:#fff}
 ;foreground = ${xrdb:background:#000}
-background = #70505050
+background = #FF000000
 #cyan = #00BCD4
 #red = #FF5252
 #yellow = #FFB224
@@ -38,7 +38,7 @@ background = #70505050
 
 [bar/bar]
 enable-ipc=false
-height = 20
+height = 30
 width = 100%
 ;bottom = true
 padding = 2
@@ -48,20 +48,21 @@ foreground = ${colors.foreground}
 
 line-size = 3
 font-size = 10
-font-0=SF Pro Display:style=Regular:size=11;2
-font-1=SF Pro Display:style=Semibold:size=12;2
+font-0=SF Pro Display:style=Regular:size=10;2
+font-1=SF Pro Display:style=Semibold:size=10;2
 font-2=Material Icons:size=10;5
 font-3=font\-logos:size=10;2
 font-4=FontAwesome5Brands:size=11;2
 font-5=IPAGothic:size=11;2
-font-6=Emoji One:scale=9
+font-6=Emoji One:scale=10
 tray-position = right
 
 
-modules-right = merval updates weather time powermenu 
+modules-right = merval updates weather time 
 modules-center = xwindow
 ;i3
- modules-left = i3 spotify
+ modules-left = i3  
+
  scroll-up = i3wm-wsnext
  scroll-down = i3wm-wsprev
  wm-restack = i3
@@ -131,10 +132,10 @@ format-underline = #009688
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:55:...%
+label = %title:0:85:...%
 label-empty = Empty 
 label-empty-font = 2
-label-maxlen = 30
+label-maxlen = 80
 label-font = 2
 format-margin = 4
 module-margin = 0
@@ -149,6 +150,7 @@ format-margin = 4
 index-sort = true
 strip-wsnumbers = true
 
+
 enable-click = true
 reverse-scroll = false
 
@@ -156,6 +158,8 @@ label-focused = %name%
 label-focused-underline = ${colors.foreground}
 label-focused-padding = 1
 label-focused-font = 2
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.foreground}
 
 label-unfocused = %name%
 label-unfocused-padding = 1
@@ -169,7 +173,7 @@ label-urgent-font = 2
 ;ws-icon-1 = 2;
 ;ws-icon-2 = 3;
 ;ws-icon-9 = 10;
-;ws-icon-default = 
+ws-icon-default = 
 
 [module/bspwm]
 type = internal/bspwm

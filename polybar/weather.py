@@ -46,9 +46,9 @@ try:
     
     
     if icon != "NO ICON, FIX":
-        max_temp = soup.find_all(class_ = "maxima changeUnitT")[0].text
-        min_temp = soup.find_all(class_ = "minima changeUnitT")[0].text
-        print("🥶"+min_temp+" 🥵" + max_temp + "(" + icon + temperature+")")
+        max_temp = soup.find_all(class_ = "max changeUnitT")[0].text
+        min_temp = soup.find_all(class_ = "min changeUnitT")[0].text
+        print("🌡️"+min_temp + "/" +max_temp + "(" + icon + temperature+")")
     else: print(icon)
 except:
     print("🥶 Nan "+" 🥵 Nan " + "( Nan )")
